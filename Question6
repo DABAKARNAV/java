@@ -1,0 +1,84 @@
+package com.company;
+import java.util.*;
+import java.lang.Math;
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        int a;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1)Addition\n2)Subtraction\n3)Multiplication\n4)Sin\n5)Cos\n6)Tan\n7)Exp(input1^input2)");
+        System.out.println("Please enter the number of function you want to execute\t");
+        int ar = sc.nextInt();
+        switch(ar)
+        {
+            case 1:
+                int sum=0;
+                System.out.println("Please enter the number of inputs");
+                a=sc.nextInt();
+                int addition[]=new int[a];
+                System.out.println("Enter the data");
+                for(int i=0;i<addition.length;i++)
+                {
+                    addition[i]=sc.nextInt();
+                    sum+=addition[i];
+                }
+                System.out.println("Addition of the numbers is\t"+sum);
+                break;
+            case 2:
+                int diff=0;
+                System.out.println("Please enter the number of inputs");
+                int b=sc.nextInt();
+                int subtraction[]=new int[b];
+                System.out.println("Enter the data");
+                for(int j=0;j<subtraction.length;j++)
+                {
+                    subtraction[j]=sc.nextInt();
+                    diff=subtraction[j]-diff;
+                }
+                System.out.println("The difference is\t"+diff);
+                break;
+            case 3:
+                int mul=1;
+                System.out.println("Enter the number of inputs");
+                int c=sc.nextInt();
+                int product[]= new int[c];
+                System.out.println("Enter the data");
+                for(int i=0;i<product.length;i++)
+                {
+                    product[i]=sc.nextInt();
+                    mul=product[i]*mul;
+                }
+                System.out.println("Product of the entered data is\t"+mul);
+                break;
+            case 4:
+                System.out.println("Enter the angle in radians");
+                double d=sc.nextDouble();
+                double Sinvalue =Math.sin(d);
+                System.out.println("The value of sin"+d +"\t is "+Sinvalue);
+                break;
+            case 5:
+                System.out.println("Enter the angle in radians");
+                double e=sc.nextDouble();
+                double Cosvalue =Math.cos(e);
+                System.out.println("The value of cos"+e +"\t is "+Cosvalue);
+                break;
+            case 6:
+                System.out.println("Enter the angle in radians");
+                double f=sc.nextDouble();
+                double Tanvalue=Math.tan(f);
+                System.out.println("The value of tan"+f+"\t is"+Tanvalue);
+                break;
+            case 7:
+                System.out.println("Enter the inputs ");
+                double a1=sc.nextDouble();
+                double b1=sc.nextDouble();
+                double result = Math.exp(a1*b1);
+                System.out.println("The exp of\t"+a1+"+"+b1+"\tis\t"+result);
+                break;
+        }
+
+
+    }
+}
