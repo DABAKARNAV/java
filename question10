@@ -1,0 +1,44 @@
+package com.company;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+                System.out.println("Enter the first lap timing:");
+                Scanner a = new Scanner(System.in);
+                String Lap_1 = a.nextLine();
+                System.out.println("Enter the second lap timing:");
+                String Lap_2 = a.nextLine();
+                System.out.println("Enter the third lap timing:");
+                String Lap_3 = a.nextLine();
+                System.out.println("The first Lap timing is: " + Lap_1);
+                System.out.println("The second Lap timing is: " + Lap_2);
+                System.out.println("The third Lap timing is: " + Lap_3);
+                long l1 = 0, l2 = 0, l3 = 0;
+                for (int i = 0; i < 2; i++) {
+                    l1 = l1 + (Lap_1.charAt(i) * 60 * 100);
+                    l2 = l2 + (Lap_2.charAt(i) * 60 * 100);
+                    l3 = l3 + (Lap_3.charAt(i) * 60 * 100);
+                }
+                for (int i = 3; i < 5; i++) {
+                    l1 = l1 + (Lap_1.charAt(i) * 100);
+                    l2 = l2 + (Lap_2.charAt(i) * 100);
+                    l3 = l3 + (Lap_3.charAt(i) * 100);
+                }
+                for (int i = 7; i < 9; i++) {
+                    l1 = l1 + (Lap_1.charAt(i));
+                    l2 = l2 + (Lap_2.charAt(i));
+                    l3 = l3 + (Lap_3.charAt(i));
+                }
+                if (l1 < l2 && l1 < l3) {
+                    System.out.println("First Lap is the fastest.");
+                } else if (l2 < l3 && l2 < l1) {
+                    System.out.println("Second Lap is the fastest.");
+                } else {
+                    System.out.println("Third lap is the fastest.");
+
+
+                }
+            }
+        }
