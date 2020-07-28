@@ -1,0 +1,67 @@
+package com.company;
+import java.util.*;
+
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter Lap time 1");
+	    String Time1=sc.nextLine();
+        System.out.println("Enter Lap time 2");
+        String Time2=sc.nextLine();
+        System.out.println("Enter Lap time 3");
+
+        String Time3=sc.nextLine();
+        String[] values=Time1.split(":");
+        String values11=values[0];
+        String values12=values[1];
+        String values13=values[2];
+        int m1,s1,ms1;
+        m1=Integer.parseInt(values11);
+        s1=Integer.parseInt(values12);
+        ms1=Integer.parseInt(values13);
+
+        String[] values2=Time2.split(":");
+        String values21=values2[0];
+        String values22=values2[1];
+        String values23=values2[2];
+        int m2,s2,ms2;
+        m2=Integer.parseInt(values21);
+        s2=Integer.parseInt(values22);
+        ms2=Integer.parseInt(values23);
+
+        String[] values3=Time3.split(":");
+        String values31=values3[0];
+        String values32=values3[1];
+        String values33=values3[2];
+        int m3,s3,ms3;
+        m3=Integer.parseInt(values31);
+        s3=Integer.parseInt(values32);
+        ms3=Integer.parseInt(values33);
+        int ft1,ft2,ft3;
+        ft1=(m1*60000)+(s1*1000)+ms1;
+        ft2=(m2*60000)+(s2*1000)+ms2;
+        ft3=(m3*60000)+(s3*1000)+ms3;
+        int temp;
+        int arr[]=new int[]{ft1,ft2,ft3};
+        for (int i = 0; i <arr.length; i++)
+        {
+            for (int j = i + 1; j <arr.length; j++)
+            {
+                if (arr[i] > arr[j])
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(int h=0;h<arr.length;h++)
+        {
+            System.out.println(arr[h]);
+        }
+    }
+}
